@@ -8,9 +8,9 @@ debug_line_number = 0
 if len(sys.argv) >= 2 and sys.argv[1] == 'input':
   sys.stdin = open('input', 'r')
 
-def abort(err='error'):
+def abort(err='error', code=-1):
   print >> sys.stderr, '%s on line %d: %s' % (err, debug_line_number, debug_line)
-  sys.exit(-1)
+  sys.exit(code)
 
 def get_int(s, low=-int(1e100), high=int(1e100)):
   """Parses a string token s into an integer between [low, high]
